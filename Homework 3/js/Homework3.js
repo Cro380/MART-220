@@ -18,18 +18,18 @@ var PeppersY = 350;
 var PeppersSize = 20;
 
 var pizza1;
-var pizza1X = 100;
-var pizza1Y = 100;
+var pizza1X = 500;
+var pizza1Y = 500;
 var pizza1Speed = 2;
 
 var pizza_2;
-var pizza_2X = 100;
-var pizza_2Y = 100;
+var pizza_2X = 25;
+var pizza_2Y = 50;
 var pizza_2Speed = 2;
 
 var pizza_AI;
-var pizza_AIX = 100;
-var pizza_AIY = 100;
+var pizza_AIX = 350;
+var pizza_AIY = 45;
 var pizza_AISpeed = 2;
 
 var newFont;
@@ -49,7 +49,7 @@ function setup()
 {
     createCanvas(1920,1080);
     textAlign(CENTER);
-    setInterval(timeIt, 1000);
+    setInterval(1000, 1000);
 }
 function draw()
 {
@@ -60,7 +60,7 @@ function draw()
     fill(0,0,0);
     textFont(newFont);
     textSize(20);
-    text('Extra Large Anomaly(Pizza)',50,50);
+    text('Pizza',50,50);
     text('Dylan Crotto',500,500);
     text('Time:' + timerText, 550, 550);
 
@@ -159,16 +159,16 @@ function draw()
         pizza1Speed *= -1;
     }
 
-    image(pizza2, pizza2X, pizza2Y);
+    image(pizza_2, pizza_2X, pizza_2Y);
     pizza2X += pizza_2Speed;
-    if(pizza2X >= width - pizza2.width || pizza2X <= pizza2.width/8)
+    if(pizza_2X >= width - pizza2.width || pizza2X <= pizza2.width/8)
     {
         pizza1Speed *= -1;
     }
 
-    image(pizzaAI, pizzaAIX, pizzaAIY);
+    image(pizza_AI, pizza_AIX, pizza_AIY);
      pizzaAI += pizzaAISpeed;
-    if(pizzaAIX >= width - pizzaAI.width || pizzaAI <= pizzaAI.width/8)
+    if(pizzaAI_X >= width - pizza_AI.width || pizza_AI <= pizza_AI.width/8)
     {
         pizza1Speed *= -1;
     }
