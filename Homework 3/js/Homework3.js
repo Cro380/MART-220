@@ -24,12 +24,12 @@ var pizza1Speed = 2;
 
 var pizza_2;
 var pizza2X = 100;
-var pizza2Y = 100;
+var pizza2Y = 3000;
 var pizza_2Speed = 2;
 
 var pizza_AI;
-var pizzaAIX = 100;
-var pizzaAIY = 100;
+var pizzaAIX = 2500;
+var pizzaAIY = 550;
 var pizzaAISpeed = 2;
 
 var newFont;
@@ -159,6 +159,9 @@ function draw()
         pizza1Speed *= 1;
         pizza1Speed *= 1;
     }
+    image(pizza2, pizza2X, pizza2Y);
+
+    image(pizzaAI, pizzaAIX, pizzaAIY);
 
 }
 

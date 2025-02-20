@@ -1,9 +1,9 @@
 class HatBoy {
     constructor(path, x, y)
     {
-        this.path = path;
-        this.x = x;
-        this.y = y;
+        this.path = 'assets/png';
+        this.x = 1000;
+        this.y = 400;
     }
     getImage()
     {
