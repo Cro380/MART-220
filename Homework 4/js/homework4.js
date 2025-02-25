@@ -87,7 +87,7 @@ function setup()
     createCanvas(5000,5000);
     textAlign(CENTER);
     setInterval(changeSpeed, 1000);
-    setInterval(incrementIndex, 50);
+    setInterval(incrementIndex, 100);
 }
 function draw()
 {
@@ -206,11 +206,7 @@ function draw()
 
 function incrementIndex()
 {
-    i += 1;
-    if(i >= animation.length) 
-    {
-        i = 0;
-    }
+    i = (i + 1) % animation.length;
 }
 
 function changeSpeed()
