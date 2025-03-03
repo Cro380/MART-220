@@ -4,6 +4,8 @@ var myAnimation;
 var animation = [];
 var i = 0; 
 var runPaths = [];
+var AnimationX = 250;
+var AnimationY = 400;
 
 var pizza1;
 var pizza1X = 1;
@@ -50,6 +52,11 @@ function setup()
         myAnimation = new imageclass(runPaths[i], x, y);
         animation[i] = myAnimation;
     }
+    
+    setInterval(() => {
+        myPizza.randomizePosition();
+}, 2000);
+   
 }
 function draw()
 {
@@ -57,6 +64,8 @@ function draw()
     textSize(30);
     
     myPizza.drawPizza();
+
+    myPizza.checkCollision(AnimationX, AnimationY);
     
     //Text
     fill(0,0,0);
@@ -90,8 +99,12 @@ function draw()
 
     if(animation.length > 0)
     {
-        image(animation[i].getImage(), x, y);
+        image(animation[i].getImage(), AnimationX, AnimationY);
     }
+
+    //Olives
+    fill(0,0,0);
+    ellipse(250, 300, 20, 20);
 }
 
 function incrementIndex()
@@ -114,10 +127,6 @@ function changeSpeed()
     }
 }
 
-function mousePressed()
-{
-    myPizza.randomizePosition(myPizza);
-}
 
 
 

@@ -1,31 +1,30 @@
 class Pizza {
     constructor() 
     {
-        this.x = 300;
-        this.y = 250;
+        this.x = random(300, width - 300);
+        this.y = random(250, width - 250);
        
-        this.cheeseX = 300;
-        this.cheeseY = 250;
         this.cheeseSize = 280;
+        this.cheeseX = this.x;
+        this.cheeseY = this.y;
         
-        this.pepperoniX = 300;
-        this.pepperoniY = 250;
         this.pepperoniSize = 75;
     
-        this.peppersX = 300;
-        this.peppersY = 250;
         this.peppersSize = 20;
-    
-        this.crustX = random(300, width - 300);
-        this.crustY = random(250, height - 250);
-        this.crustSize = 310;
+
+        this.crustSize = 300;
+        
+        this.visible = true;
     }
+
 
     drawPizza() 
     {
+        if(!this.visible) return;
+        
         // Crust
         fill(150, 80, 70);
-        circle(this.crustX, this.crustY, this.crustSize);
+        circle(this.X, this.Y, this.crustSize);
 
         // Cheese
         fill(255, 225, 0);
@@ -39,33 +38,33 @@ class Pizza {
 
         // Pepperoni
         fill(100, 0, 0);
-        circle(this.pepperoniX, this.pepperoniY, this.pepperoniSize);
+        circle(this.X, this.Y, this.pepperoniSize);
 
         // Peppers
         fill(0, 100, 0);
-        rect(this.peppersX, this.peppersY, this.peppersSize, this.peppersSize);
+        rect(this.X, this.Y, this.peppersSize, this.peppersSize);
 
         // Move pepperoni
        if(keyIsPressed)
     {
          if(key == 'a')
          {
-              this.pepperoniX-=3;
+              this.X-=3;
          }
     
          else if(key == 'd')
          {
-              this.pepperoniX+=3;
+              this.X+=3;
          }
     
          else if(key == 'w')
          {
-              this.pepperoniY-=3;
+              this.Y-=3;
          }
     
          else if(key == 's')
          {
-              this.pepperoniY+=3;
+              this.Y+=3;
          }
     }
 
@@ -92,12 +91,25 @@ class Pizza {
               this.peppersY+=3;
          }
     }
-
-    randomizeCrust() 
-    {
-        this.crustX = random(300,width - 300);
-        this.crustY = random(250, height - 250);
     }
+
+    randomizePosition()
+    {
+        this.X = random(100, 500);
+        this.Y = random(100, 400);
+        this.crustSize = random(250, 300);
+        this.cheeseSize = random(200, 300);
+        this.cheeseX = random(250,300);
+        this.cheeseY = random(250,300);
+    }
+
+    checkCollision(AnimationX, AnimationY)
+    {
+        let distance = dist(this.X, this.Y, AnimationX, AnimationY);
+        if (distance < this.crustSize / 2)
+        {
+            this.visible = false;
+        }
     }
 }
 
