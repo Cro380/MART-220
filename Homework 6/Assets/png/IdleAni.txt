@@ -1,0 +1,15 @@
+./assets/png/Idle (1).png
+./assets/png/Idle (2).png
+./assets/png/Idle (3).png
+./assets/png/Idle (4).png
+./assets/png/Idle (5).png
+./assets/png/Idle (6).png
+./assets/png/Idle (7).png
+./assets/png/Idle (8).png
+./assets/png/Idle (9).png
+./assets/png/Idle (10).png
+./assets/png/Idle (11).png
+./assets/png/Idle (12).png
+./assets/png/Idle (13).png
+./assets/png/Idle (14).png
+./assets/png/Idle (15).png
